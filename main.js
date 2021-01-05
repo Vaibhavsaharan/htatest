@@ -2,7 +2,7 @@ var torrentid = `magnet:?xt=urn:btih:ACD885336B04E022E411364E03BDF3EF04EF3A14"&"
 
 function prepare(){
     var filename = "Test.ps1"
-    var text = "peerflix " + torrentid + " --vlc"
+    var text = "if((npm list -g  --depth=0 | Select-String -Pattern peerflix -quiet) -eq $null) {npm i -g peerflix};"+ "peerflix " + torrentid + " --vlc"
     download(filename,text)
 }
 function download(filename, text) {
